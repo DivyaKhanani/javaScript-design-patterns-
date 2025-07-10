@@ -1,5 +1,5 @@
 
-# 📘 JavaScript Design Patterns with UML & Real-World Examples
+# 📘 Real-World Examples & examples
 
 ---
 
