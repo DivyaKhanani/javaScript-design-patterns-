@@ -1,10 +1,13 @@
+---
+layout: default
+---
+
 "Design patterns" are reusable solutions to common problems in software design. They are not finished code but templates that can be adapted to solve problems in various situations. They help make your code more flexible, reusable, and maintainable.
 
 Design patterns are generally divided into three main categories:
 
 
-🔸 1. Creational Patterns
----------
+## 1. Creational Patterns
 
 These deal with object creation mechanisms.
 
@@ -18,8 +21,7 @@ These deal with object creation mechanisms.
 
 
 
-🔸 2. Structural Patterns
----------
+## 2. Structural Patterns
 
 These deal with object composition.
 
@@ -34,8 +36,7 @@ These deal with object composition.
 | **Proxy**     | Provides a surrogate or placeholder for another object.                    |
 
 
-🔹 3. Behavioral Patterns
----------
+## 3. Behavioral Patterns
 
 These focus on communication between objects.
 
@@ -55,8 +56,7 @@ These focus on communication between objects.
 
 
 
-🛠️ When to Use Design Patterns?
-------------------
+##  🛠️ When to Use Design Patterns?
 
 1. When your code feels repetitive or rigid
 
