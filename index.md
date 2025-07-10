@@ -3,6 +3,8 @@ title: Design Patterns
 layout: default
 nav_order: 1
 permalink: /
+toc: true
+toc_sticky: true
 ---
 
 # 📘 JavaScript Design Patterns
