@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Real-World Examples & UML
-nav_enabled: true
 toc: true
 toc_sticky: true
 ---
