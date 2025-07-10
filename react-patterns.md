@@ -1,7 +1,7 @@
 ---
 layout: default
 title: React Design Patterns
-nav_enabled: true
+nav_order: 3
 toc: true
 toc_sticky: true
 ---
