@@ -1,6 +1,10 @@
-# 📘 JavaScript Design Patterns
 
 ---
+layout: default
+title: Design Patterns
+nav_enabled: true
+---
+# 📘 JavaScript Design Patterns
 
 "Design patterns" are reusable solutions to common problems in software design. They are not finished code but templates that can be adapted to solve problems in various situations. They help make your code more flexible, reusable, and maintainable.
 
