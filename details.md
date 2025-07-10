@@ -1,6 +1,10 @@
+---
+layout: default
+title: Real-World Examples & UML
+nav_enabled: true
+---
 
-# 📘 Real-World Examples & examples
-
+# 📘 Real-World Examples & UML
 ---
 
 ## 🏗️ Creational Patterns  
