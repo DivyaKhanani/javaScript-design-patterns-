@@ -64,3 +64,4 @@ These focus on communication between objects.
 
 3. When solving recurring design problems
 
+[Click to view in more detail with example and UML daigram](details.md)
