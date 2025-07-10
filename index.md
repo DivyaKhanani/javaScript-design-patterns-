@@ -1,7 +1,8 @@
 ---
-layout: default
 title: Design Patterns
-nav_enabled: true
+layout: default
+nav_order: 1
+permalink: /
 ---
 
 # 📘 JavaScript Design Patterns
