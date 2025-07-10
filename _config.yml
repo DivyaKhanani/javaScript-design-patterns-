@@ -1,3 +1,5 @@
 title: Comprehensive JavaScript Design Patterns Guide with UML
 theme: minima
 remote_theme: pmarsceill/just-the-docs
+toc: true
+toc_sticky: true
