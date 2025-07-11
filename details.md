@@ -220,7 +220,218 @@ class Circle {
 +----------+       +-----------------+
 ```
 
+
+
 ## 🎭 Behavioral Patterns  
 > Focus on communication between objects and responsibilities.
 
-[... section continues, truncated for brevity ...]
+### 12. Observer Pattern
+🔹 *Defines a one-to-many dependency so that when one object changes state, all its dependents are notified.*
+```js
+class Subject {
+  constructor() {
+    this.observers = [];
+  }
+  subscribe(observer) {
+    this.observers.push(observer);
+  }
+  notify(data) {
+    this.observers.forEach(observer => observer.update(data));
+  }
+}
+```
+**UML:**
+```
++-----------+
+|  Subject  |
++-----------+
+| -observers|
+| +subscribe() |
+| +notify()    |
++-----------+
+       |
+     ------
+     |    |
++---------+  +------+
+| Logger  |  | ...  |
++---------+  +------+
+```
+
+### 13. Strategy Pattern
+🔹 *Enables selecting an algorithm at runtime by encapsulating them into interchangeable strategy objects.*
+```js
+class DiscountContext {
+  setStrategy(strategy) {
+    this.strategy = strategy;
+  }
+  getDiscount(price) {
+    return this.strategy.calculate(price);
+  }
+}
+```
+**UML:**
+```
++--------------------+
+|  DiscountContext   |
++--------------------+
+| -strategy          |
+| +setStrategy()     |
+| +getDiscount()     |
++--------------------+
+     |
+     +-------------+
+     |             |
++----------------+ +-----------------+
+| RegularDiscount| | PremiumDiscount |
++----------------+ +-----------------+
+```
+
+### 14. Chain of Responsibility
+🔹 *Passes a request along a chain of handlers where each one can handle it or pass it along.*
+```js
+class Handler {
+  setNext(handler) {
+    this.next = handler;
+  }
+  handle(request) {
+    if (this.next) return this.next.handle(request);
+  }
+}
+```
+**UML:**
+```
++-----------+
+|  Handler  |
++-----------+
+| -next     |
+| +setNext()|
+| +handle() |
++-----------+
+     ^
+    -----
+   |     |
++-------------+ +----------------+
+| AuthHandler | | LoggingHandler |
++-------------+ +----------------+
+```
+
+### 15. Command Pattern
+🔹 *Encapsulates a request as an object, allowing undo, logging, or queuing.*
+```js
+class LightOnCommand {
+  execute() {
+    this.light.on();
+  }
+}
+```
+**UML:**
+```
++----------------+
+| RemoteControl  |
++----------------+
+| -command       |
+| +setCommand()  |
+| +pressButton() |
++----------------+
+       |
+       v
++----------------+
+| LightOnCommand |
++----------------+
+       |
+       v
+   +--------+
+   | Light  |
+   +--------+
+```
+
+### 16. Template Method Pattern
+🔹 *Defines the skeleton of an algorithm, letting subclasses fill in specific steps.*
+```js
+class CSVParser extends DataParser {
+  processData() {
+    console.log("Processing CSV data");
+  }
+}
+```
+**UML:**
+```
++-------------+
+| DataParser  |
++-------------+
+| +parse()    |
+| +readData() |
+| +saveData() |
+| +processData() (abstract) |
++-------------+
+     |
+     v
++---------------+
+|  CSVParser    |
++---------------+
+```
+
+### 17. Memento Pattern
+🔹 *Captures and externalizes an object’s internal state to restore it later.*
+```js
+const saved = editor.save();
+editor.restore(saved);
+```
+**UML:**
+```
++---------+        +----------+
+| Editor  |<----->| Memento  |
++---------+        +----------+
+| +save() |        | +getContent() |
+| +restore()|      +----------+
++---------+
+```
+
+### 18. Mediator Pattern
+🔹 *Reduces chaotic communication between multiple objects by centralizing it in a mediator.*
+```js
+class ChatRoom {
+  showMessage(user, message) {
+    console.log(`[${user.getName()}]: ${message}`);
+  }
+}
+```
+**UML:**
+```
++-----------+     +-----------+
+|  ChatRoom |<--->|   User    |
++-----------+     +-----------+
+```
+
+### 19. Interpreter Pattern
+🔹 *Implements a grammar for interpreting expressions.*
+```js
+const expr = new AddExpression(new NumberExpression(5), new NumberExpression(3));
+console.log(expr.interpret()); // 8
+```
+**UML:**
+```
++----------------+         +----------------+
+| Expression     |<--------| NumberExpression |
++----------------+         +----------------+
+       ^
+       |
++----------------+
+| AddExpression  |
++----------------+
+```
+
+### 20. Visitor Pattern
+🔹 *Allows adding new operations to existing class structures without modifying them.*
+```js
+book.accept(visitor);
+magazine.accept(visitor);
+```
+**UML:**
+```
++-----------+     +------------+
+|  Visitor  |<----|  Elements  |
++-----------+     +------------+
+| +visitBook()    | +accept()  |
++-----------+     +------------+
+```
